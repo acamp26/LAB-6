@@ -1,0 +1,669 @@
+<title>Del estudio a la calle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root{
+    --ground:#E7EAE6;
+    --sheet:#FCFCFB;
+    --sheet-2:#F2F4F0;
+    --ink:#14201D;
+    --ink-2:#45544F;
+    --muted:#798782;
+    --line:#DCE0DA;
+    --rule:#C3CBC4;
+    --accent:#00786A;
+    --accent-soft:#D9E8E4;
+    --c-alo:#009C86;
+    --c-lulu:#C07A12;
+    --c-gym:#6C4BD3;
+    --shadow:0 1px 2px rgba(20,32,29,.06), 0 12px 34px rgba(20,32,29,.08);
+    --serif:"Bodoni Moda", "Times New Roman", Georgia, serif;
+    --sans:"IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono:"IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0D100F;
+      --sheet:#1A1C1B;
+      --sheet-2:#212524;
+      --ink:#E9EDEA;
+      --ink-2:#AEB9B5;
+      --muted:#87918D;
+      --line:#2B302E;
+      --rule:#3A423F;
+      --accent:#46C3AC;
+      --accent-soft:#1E2F2C;
+      --c-alo:#1FA88F;
+      --c-lulu:#C08830;
+      --c-gym:#8472E0;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0D100F;
+    --sheet:#1A1C1B;
+    --sheet-2:#212524;
+    --ink:#E9EDEA;
+    --ink-2:#AEB9B5;
+    --muted:#87918D;
+    --line:#2B302E;
+    --rule:#3A423F;
+    --accent:#46C3AC;
+    --accent-soft:#1E2F2C;
+    --c-alo:#1FA88F;
+    --c-lulu:#C08830;
+    --c-gym:#8472E0;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.45);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:15px;
+    line-height:1.62;
+    padding:0 16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .doc{
+    max-width:880px;
+    margin:0 auto;
+    padding-block:28px 56px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .page{
+    background:var(--sheet);
+    border:1px solid var(--line);
+    border-radius:2px;
+    box-shadow:var(--shadow);
+    padding:52px 56px 40px;
+    position:relative;
+  }
+  @media (max-width:640px){
+    .page{padding:34px 22px 32px}
+  }
+
+  /* ---------- type ---------- */
+  h1,h2,h3{text-wrap:balance;margin:0}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0;
+  }
+  .cover-title{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(42px,8.4vw,76px);
+    line-height:.98;
+    letter-spacing:-.015em;
+    margin:18px 0 0;
+  }
+  .cover-title em{font-style:italic}
+  .cover-sub{
+    font-size:clamp(16px,2.4vw,19px);
+    color:var(--ink-2);
+    max-width:36em;
+    margin:18px 0 0;
+    line-height:1.45;
+  }
+  h2.sec{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:30px;
+    line-height:1.12;
+    letter-spacing:-.01em;
+    margin:0;
+  }
+  h3{
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.01em;
+    margin:0 0 4px;
+  }
+  p{margin:0 0 13px;max-width:68ch}
+  p:last-child{margin-bottom:0}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  strong{font-weight:600}
+  .lead{font-size:16.5px;color:var(--ink-2)}
+  .lead::first-letter{
+    font-family:var(--serif);
+    font-size:3.05em;
+    float:left;
+    line-height:.82;
+    padding:.06em .1em 0 0;
+    color:var(--ink);
+  }
+  .small{font-size:13px;color:var(--muted);max-width:72ch}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ---------- cover ---------- */
+  .cover{padding-top:44px}
+  .cover-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .cover-art{margin:30px 0 0}
+  .cover-art svg{display:block;width:100%;height:auto;max-width:100%}
+  .cover-meta{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:2px 26px;
+    border-top:1px solid var(--rule);
+    padding-top:18px;
+  }
+  .meta-item{padding:8px 0}
+  .meta-k{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;
+  }
+  .meta-v{font-size:14px;color:var(--ink)}
+  .abstract{
+    margin-top:26px;
+    border-top:1px solid var(--rule);
+    padding-top:20px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:14px;
+  }
+  .kw{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px;padding:0;list-style:none}
+  .kw li{
+    font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+    border:1px solid var(--rule);border-radius:999px;
+    padding:4px 11px;color:var(--ink-2);background:var(--sheet-2);
+  }
+
+  /* ---------- running header / footer ---------- */
+  .runner{
+    display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:26px;
+  }
+  .folio{
+    margin-top:34px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;color:var(--muted);
+    display:flex;justify-content:space-between;
+  }
+  .sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:16px}
+  .sec-no{
+    font-family:var(--mono);font-size:12px;color:var(--accent);
+    padding-top:6px;letter-spacing:.08em;
+  }
+  .block{margin-top:26px}
+
+  /* ---------- brand entries ---------- */
+  .brands{display:flex;flex-direction:column;gap:0;margin-top:8px}
+  .brand{
+    display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;
+    padding:18px 0;border-top:1px solid var(--line);
+  }
+  .brand:last-child{border-bottom:1px solid var(--line)}
+  .brand-id{display:flex;flex-direction:column;gap:5px}
+  .brand-name{font-family:var(--serif);font-size:21px;line-height:1.05}
+  .brand-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .swatch{width:26px;height:3px;border-radius:2px;margin-bottom:4px}
+  .brand p{margin-bottom:9px;font-size:14.5px}
+
+  /* ---------- figures ---------- */
+  figure{margin:26px 0 0}
+  figure svg{display:block;width:100%;height:auto;overflow:visible}
+  figcaption{
+    font-size:12px;color:var(--muted);margin-top:10px;
+    border-top:1px solid var(--line);padding-top:8px;max-width:72ch;
+  }
+  figcaption b{color:var(--ink-2);font-weight:600}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 12px;padding:0;list-style:none}
+  .legend li{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+  .dot{width:9px;height:9px;border-radius:2px;flex:none}
+
+  /* ---------- table ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:18px}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+  caption{
+    text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted);padding-bottom:10px;
+  }
+  th,td{text-align:left;vertical-align:top;padding:11px 14px 11px 0;border-bottom:1px solid var(--line)}
+  thead th{
+    border-bottom:1px solid var(--rule);font-size:12px;letter-spacing:.02em;
+    padding-bottom:9px;
+  }
+  thead th span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-top:2px}
+  tbody th{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);font-weight:400;width:118px;padding-right:18px;
+  }
+  .th-alo{color:var(--c-alo)}
+  .th-lulu{color:var(--c-lulu)}
+  .th-gym{color:var(--c-gym)}
+
+  /* ---------- lessons ---------- */
+  .lessons{display:grid;gap:0;margin-top:6px;counter-reset:l}
+  .lesson{
+    display:grid;grid-template-columns:30px minmax(0,1fr);gap:16px;
+    padding:16px 0;border-top:1px solid var(--line);
+  }
+  .lesson:last-child{border-bottom:1px solid var(--line)}
+  .lesson-n{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:2px}
+  .lesson p{font-size:14.5px;margin:0}
+
+  /* ---------- video card ---------- */
+  .video{
+    margin-top:18px;display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;
+    align-items:center;background:var(--sheet-2);border:1px solid var(--line);
+    padding:18px 20px;border-radius:2px;
+  }
+  .video svg{width:120px;height:auto;display:block}
+  .video-t{font-size:15px;font-weight:600;margin:0 0 4px;line-height:1.3}
+  .video a{font-family:var(--mono);font-size:12px;word-break:break-all}
+  @media (max-width:560px){
+    .video{grid-template-columns:1fr}
+    .video svg{width:90px}
+    .brand{grid-template-columns:1fr;gap:10px}
+  }
+
+  /* ---------- references ---------- */
+  ol.refs{margin:14px 0 0;padding-left:1.25em;display:flex;flex-direction:column;gap:11px}
+  ol.refs li{font-size:13px;line-height:1.5;color:var(--ink-2);max-width:76ch}
+  ol.refs a{word-break:break-word}
+
+  @media print{
+    body{background:#fff;padding:0}
+    .doc{max-width:none;gap:0;padding:0}
+    .page{box-shadow:none;border:0;break-after:page;padding:0 0 24px}
+    .page:last-child{break-after:auto}
+  }
+</style>
+
+<div class="doc">
+
+<!-- ============ PORTADA ============ -->
+<article class="page cover">
+  <div class="cover-head">
+    <p class="eyebrow">Ensayo académico · Análisis comparativo de marcas</p>
+    <p class="eyebrow" style="color:var(--muted)">Laboratorio 6 · 2026</p>
+  </div>
+
+  <h1 class="cover-title">Del estudio<br>a la <em>calle</em></h1>
+  <p class="cover-sub">Cómo <strong>Alo Yoga</strong>, <strong>lululemon</strong> y <strong>Gymshark</strong> construyeron tres imperios distintos dentro del mismo mercado: el athleisure.</p>
+
+  <div class="cover-art" role="img" aria-label="Ilustración abstracta de tres franjas —aire, tierra y océano— que dan nombre a la marca Alo, atravesadas por tres trayectorias de marca.">
+    <svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="cv"><rect x="0" y="0" width="800" height="250" rx="2"/></clipPath>
+      </defs>
+      <g clip-path="url(#cv)">
+        <rect x="0" y="0" width="800" height="250" fill="var(--sheet-2)"/>
+        <!-- AIRE: arcos concéntricos -->
+        <g fill="none" stroke="var(--rule)" stroke-width="1">
+          <circle cx="640" cy="96" r="42"/><circle cx="640" cy="96" r="66"/>
+          <circle cx="640" cy="96" r="90"/><circle cx="640" cy="96" r="114"/>
+        </g>
+        <circle cx="640" cy="96" r="22" fill="var(--accent-soft)"/>
+        <!-- TIERRA: horizonte -->
+        <line x1="0" y1="163" x2="800" y2="163" stroke="var(--rule)" stroke-width="1"/>
+        <!-- OCÉANO: ondas -->
+        <g fill="none" stroke="var(--rule)" stroke-width="1" opacity=".85">
+          <path d="M0 190 C 66 174, 134 206, 200 190 S 334 174, 400 190 S 534 206, 600 190 S 734 174, 800 190"/>
+          <path d="M0 214 C 66 198, 134 230, 200 214 S 334 198, 400 214 S 534 230, 600 214 S 734 198, 800 214"/>
+          <path d="M0 238 C 66 222, 134 254, 200 238 S 334 222, 400 238 S 534 254, 600 238 S 734 222, 800 238"/>
+        </g>
+        <!-- Tres trayectorias de marca -->
+        <path d="M40 150 C 200 150, 300 60, 760 34" fill="none" stroke="var(--c-lulu)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M40 158 C 240 158, 320 96, 760 74" fill="none" stroke="var(--c-alo)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M40 166 C 280 166, 360 132, 760 116" fill="none" stroke="var(--c-gym)" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="760" cy="34" r="4.5" fill="var(--c-lulu)" stroke="var(--sheet-2)" stroke-width="2"/>
+        <circle cx="760" cy="74" r="4.5" fill="var(--c-alo)" stroke="var(--sheet-2)" stroke-width="2"/>
+        <circle cx="760" cy="116" r="4.5" fill="var(--c-gym)" stroke="var(--sheet-2)" stroke-width="2"/>
+        <!-- Etiquetas AIR / LAND / OCEAN -->
+        <g font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="2.6" fill="var(--muted)">
+          <text x="34" y="40">A I R E</text>
+          <text x="34" y="196">T I E R R A</text>
+          <text x="34" y="236">O C É A N O</text>
+        </g>
+        <text x="34" y="112" font-family="Bodoni Moda, serif" font-size="58" fill="var(--ink)" opacity=".9">A L O</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cover-meta">
+    <div class="meta-item"><span class="meta-k">Autor(a)</span><span class="meta-v">______________________</span></div>
+    <div class="meta-item"><span class="meta-k">Asignatura</span><span class="meta-v">______________________</span></div>
+    <div class="meta-item"><span class="meta-k">Docente</span><span class="meta-v">______________________</span></div>
+    <div class="meta-item"><span class="meta-k">Fecha</span><span class="meta-v num">14 de septiembre de 2026</span></div>
+  </div>
+
+  <div class="abstract">
+    <div>
+      <h3>Resumen</h3>
+      <p class="small" style="color:var(--ink-2)">Este ensayo compara tres marcas de ropa deportiva de estilo de vida que compiten en el mismo mercado con manuales de juego opuestos. Alo Yoga convirtió el bienestar en un objeto de deseo de lujo; lululemon institucionalizó la comunidad local como canal de distribución; Gymshark inventó, casi sin presupuesto, el marketing de creadores tal como lo conocemos. Se analizan cuatro dimensiones —estrategias clave, inspiración, características y beneficios— para explicar por qué las tres tuvieron éxito con recetas incompatibles entre sí.</p>
+    </div>
+    <div>
+      <h3>Palabras clave</h3>
+      <ul class="kw">
+        <li>athleisure</li>
+        <li>posicionamiento</li>
+        <li>marketing de influencia</li>
+        <li>comunidad</li>
+        <li>experiencia de marca</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- ============ PÁGINA 1 ============ -->
+<article class="page">
+  <div class="runner"><span>Del estudio a la calle</span><span>Página 1 de 3</span></div>
+
+  <div class="sec-head">
+    <span class="sec-no">I</span>
+    <h2 class="sec">Tres orígenes, un mismo mercado</h2>
+  </div>
+
+  <p class="lead">El athleisure dejó de ser una categoría de ropa para convertirse en un lenguaje cultural: hoy una prenda deportiva comunica disciplina, estatus y pertenencia mucho antes de que alguien entre a un gimnasio. Ese desplazamiento —de la función al significado— explica por qué el mercado se volvió tan disputado. En Estados Unidos, Nike concentra alrededor del 31,6 % del gasto mensual en la categoría y lululemon el 21,2 %, pero la amenaza real para el líder ya no viene de los gigantes históricos, sino de una camada de retadores privados que le quitan clientes de su núcleo (Chain Store Guide, 2025).</p>
+
+  <p>Este ensayo selecciona tres de esas marcas por una razón metodológica: comparten categoría, público y rango de edad, pero llegaron al éxito por caminos que se contradicen entre sí. <strong>Alo Yoga</strong> apostó por el deseo y la escasez; <strong>lululemon</strong>, por la comunidad organizada y la ingeniería textil; <strong>Gymshark</strong>, por la velocidad digital y un precio accesible. Compararlas permite aislar qué decisiones son verdaderamente estratégicas y cuáles son solo estética.</p>
+
+  <div class="brands">
+    <div class="brand">
+      <div class="brand-id">
+        <span class="swatch" style="background:var(--c-alo)"></span>
+        <span class="brand-name">Alo Yoga</span>
+        <span class="brand-tag">Los Ángeles · 2007</span>
+      </div>
+      <div>
+        <p>Su nombre es un acrónimo —<em>air, land and ocean</em>: aire, tierra y océano— y funciona como declaración de propósito. La fundaron Danny Harris y Marco DeGeorge, amigos de la infancia que llegaron al yoga por necesidad: DeGeorge se recuperaba de una lesión de espalda y Harris manejaba un cuadro de ansiedad. Antes de vender una sola prenda de yoga habían construido un negocio de serigrafía en Los Gatos, California, que escalaron hasta convertirlo en Color Image Apparel, un fabricante de básicos por volumen (Wikipedia, 2026; SUCCESS, 2025).</p>
+        <p>Esa base industrial es la clave que casi nadie menciona: Alo nació sabiendo fabricar. Sobre ella montó un posicionamiento de moda —<em>studio to street</em>— que trasladó el yoga desde el tapete hasta la alfombra roja. Hoy la compañía es 100 % de sus fundadores, con participaciones iguales, y fue valorada en torno a los 10.000 millones de dólares cuando contrataron al banco Moelis para explorar inversión (Forbes, 2025).</p>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-id">
+        <span class="swatch" style="background:var(--c-lulu)"></span>
+        <span class="brand-name">lululemon</span>
+        <span class="brand-tag">Vancouver · 1998</span>
+      </div>
+      <div>
+        <p>Chip Wilson abrió el primer local como estudio de yoga de día y tienda de noche. De ahí salió el hallazgo fundacional de la marca: si el producto se prueba en el contexto donde se usa, la tienda deja de ser un punto de venta y pasa a ser un punto de prueba. Sobre esa intuición lululemon construyó tejidos propietarios, un programa de embajadores locales y una identidad —la <em>sweatlife</em>— que convierte transacciones en relaciones (Latterly, 2025).</p>
+        <p>Es la única de las tres que cotiza en bolsa, lo que la obliga a crecer con métricas públicas: cerró el año fiscal 2024 con 10.600 millones de dólares de ingresos y el fiscal 2025 con 11.100 millones, sosteniendo un margen bruto cercano al 60 % que ninguna marca de escala comparable alcanza.</p>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-id">
+        <span class="swatch" style="background:var(--c-gym)"></span>
+        <span class="brand-name">Gymshark</span>
+        <span class="brand-tag">Birmingham · 2012</span>
+      </div>
+      <div>
+        <p>Ben Francis tenía 19 años, una máquina de coser, una impresora de serigrafía y el garaje de sus padres. Sin presupuesto para publicidad, hizo lo único que podía: enviar producto gratis a los youtubers de fitness que él mismo veía, como Nikki Blackketter y Lex Griffin. En 2012 nadie llamaba a eso <em>influencer marketing</em>; las marcas establecidas consideraban YouTube una pérdida de tiempo (Collabstr, 2024).</p>
+        <p>El punto de inflexión llegó en la feria BodyPower de Birmingham en 2013: un conjunto deportivo se viralizó en Facebook y generó 30.000 libras en ventas en treinta minutos. Ocho años después la marca alcanzaba el estatus de unicornio, y su facturación superó por primera vez las 600 millones de libras en el ejercicio 2024.</p>
+      </div>
+    </div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 800 148" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Línea de tiempo: lululemon fundada en 1998, Alo Yoga en 2007, Gymshark en 2012.">
+      <line x1="40" y1="74" x2="770" y2="74" stroke="var(--rule)" stroke-width="1"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--muted)" text-anchor="middle">
+        <text x="40" y="98">1995</text><text x="770" y="98">2026</text>
+      </g>
+      <!-- lululemon 1998 -->
+      <g>
+        <line x1="110" y1="74" x2="110" y2="46" stroke="var(--c-lulu)" stroke-width="1.5"/>
+        <circle cx="110" cy="74" r="5" fill="var(--c-lulu)" stroke="var(--sheet)" stroke-width="2"/>
+        <text x="110" y="36" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12.5" font-weight="600" fill="var(--ink)">lululemon</text>
+        <text x="110" y="20" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--c-lulu)">1998</text>
+      </g>
+      <!-- Alo 2007 -->
+      <g>
+        <line x1="322" y1="74" x2="322" y2="46" stroke="var(--c-alo)" stroke-width="1.5"/>
+        <circle cx="322" cy="74" r="5" fill="var(--c-alo)" stroke="var(--sheet)" stroke-width="2"/>
+        <text x="322" y="36" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12.5" font-weight="600" fill="var(--ink)">Alo Yoga</text>
+        <text x="322" y="20" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--c-alo)">2007</text>
+      </g>
+      <!-- Gymshark 2012 -->
+      <g>
+        <line x1="440" y1="74" x2="440" y2="104" stroke="var(--c-gym)" stroke-width="1.5"/>
+        <circle cx="440" cy="74" r="5" fill="var(--c-gym)" stroke="var(--sheet)" stroke-width="2"/>
+        <text x="440" y="120" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12.5" font-weight="600" fill="var(--ink)">Gymshark</text>
+        <text x="440" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--c-gym)">2012</text>
+      </g>
+      <!-- hitos -->
+      <g font-family="IBM Plex Mono, monospace" font-size="9.5" fill="var(--muted)">
+        <circle cx="698" cy="74" r="3.5" fill="var(--rule)"/>
+        <line x1="698" y1="74" x2="698" y2="60" stroke="var(--rule)" stroke-width="1"/>
+        <text x="698" y="52" text-anchor="middle">2023 · valoración de Alo ≈ 10 000 M USD</text>
+      </g>
+    </svg>
+    <figcaption><b>Figura 1.</b> Catorce años separan a la marca más antigua de la más joven; las tres alcanzan escala global en la misma década. Elaboración propia con datos de Forbes (2025), Wikipedia (2026) y TheIndustry.fashion (2025).</figcaption>
+  </figure>
+
+  <div class="folio"><span>I · Tres orígenes</span><span class="num">1</span></div>
+</article>
+
+<!-- ============ PÁGINA 2 ============ -->
+<article class="page">
+  <div class="runner"><span>Del estudio a la calle</span><span>Página 2 de 3</span></div>
+
+  <div class="sec-head">
+    <span class="sec-no">II</span>
+    <h2 class="sec">Análisis comparativo</h2>
+  </div>
+
+  <p>La diferencia de tamaño entre las tres es enorme, y sin embargo las tres son consideradas casos de éxito. Eso obliga a comparar no solo la escala, sino la eficiencia del modelo que la produjo: lululemon factura casi catorce veces más que Gymshark, pero Gymshark llegó a 600 millones de libras habiendo empezado con una máquina de coser y sin presupuesto de medios.</p>
+
+  <figure>
+    <ul class="legend">
+      <li><span class="dot" style="background:var(--c-lulu)"></span> lululemon · FY2025 (reportado)</li>
+      <li><span class="dot" style="background:var(--c-alo)"></span> Alo Yoga · 2024 (estimado)</li>
+      <li><span class="dot" style="background:var(--c-gym)"></span> Gymshark · FY2024 (reportado)</li>
+    </ul>
+    <svg viewBox="0 0 800 216" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de barras de ingresos anuales aproximados: lululemon 11 100 millones de dólares, Alo Yoga 1 300 millones estimados, Gymshark 780 millones.">
+      <!-- rejilla -->
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="150" y1="18" x2="150" y2="168"/>
+        <line x1="300" y1="18" x2="300" y2="168"/>
+        <line x1="450" y1="18" x2="450" y2="168"/>
+        <line x1="600" y1="18" x2="600" y2="168"/>
+        <line x1="750" y1="18" x2="750" y2="168"/>
+      </g>
+      <line x1="150" y1="168" x2="750" y2="168" stroke="var(--rule)" stroke-width="1"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--muted)" text-anchor="middle">
+        <text x="150" y="186">0</text><text x="300" y="186">3</text><text x="450" y="186">6</text>
+        <text x="600" y="186">9</text><text x="750" y="186">12</text>
+        <text x="450" y="206" fill="var(--muted)">miles de millones de USD (aprox.)</text>
+      </g>
+      <!-- barras: escala 150 px = 3 000 M USD -->
+      <g>
+        <rect x="150" y="30" width="555" height="26" rx="4" fill="var(--c-lulu)"/>
+        <text x="0" y="48" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">lululemon</text>
+        <text x="717" y="48" font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--ink)">11 100</text>
+      </g>
+      <g>
+        <rect x="150" y="84" width="65" height="26" rx="4" fill="var(--c-alo)"/>
+        <text x="0" y="102" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">Alo Yoga</text>
+        <text x="227" y="102" font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--ink)">≈ 1 300 †</text>
+      </g>
+      <g>
+        <rect x="150" y="138" width="39" height="26" rx="4" fill="var(--c-gym)"/>
+        <text x="0" y="156" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">Gymshark</text>
+        <text x="201" y="156" font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--ink)">≈ 780 ‡</text>
+      </g>
+    </svg>
+    <figcaption><b>Figura 2.</b> Ingresos anuales aproximados en millones de dólares. † Alo es una empresa privada y no publica estados financieros: la cifra es una estimación de mercado para 2024, tras superar los 1.000 millones en 2022. ‡ Gymshark reportó 607,3 millones de libras en el ejercicio cerrado en julio de 2024, convertidos aquí a dólares a tipo aproximado. lululemon reportó 11.100 millones de dólares en el fiscal 2025. Elaboración propia.</figcaption>
+  </figure>
+
+  <div class="block">
+    <p>La escala, sin embargo, no explica el posicionamiento. Si se cruzan dos ejes —el precio al que la marca decide vender y el motor que usa para crecer— las tres ocupan casillas distintas y ninguna compite de frente con las otras dos en su propio terreno.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de posicionamiento: Alo Yoga en precio prestigio y crecimiento por experiencia física; lululemon en precio premium y comunidad organizada; Gymshark en precio accesible y comunidad digital de creadores.">
+      <rect x="120" y="20" width="600" height="180" fill="none" stroke="var(--line)" stroke-width="1"/>
+      <line x1="420" y1="20" x2="420" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 4"/>
+      <line x1="120" y1="110" x2="720" y2="110" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 4"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing=".08em" fill="var(--muted)">
+        <text x="120" y="222" text-anchor="start">PRECIO ACCESIBLE</text>
+        <text x="720" y="222" text-anchor="end">PRESTIGIO / LUJO</text>
+        <text x="112" y="26" text-anchor="end" opacity="0">x</text>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing=".08em" fill="var(--muted)">
+        <text x="12" y="32">RETAIL COMO</text><text x="12" y="45">EXPERIENCIA</text>
+        <text x="12" y="188">COMUNIDAD</text><text x="12" y="201">DIGITAL</text>
+      </g>
+      <!-- puntos -->
+      <g>
+        <circle cx="648" cy="58" r="9" fill="var(--c-alo)" stroke="var(--sheet)" stroke-width="2"/>
+        <text x="632" y="48" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Alo Yoga</text>
+        <text x="632" y="64" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="var(--ink-2)">169 sanctuaries · escasez y celebridad</text>
+      </g>
+      <g>
+        <circle cx="486" cy="104" r="9" fill="var(--c-lulu)" stroke="var(--sheet)" stroke-width="2"/>
+        <text x="504" y="100" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">lululemon</text>
+        <text x="504" y="116" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="var(--ink-2)">embajadores locales · producto técnico</text>
+      </g>
+      <g>
+        <circle cx="236" cy="166" r="9" fill="var(--c-gym)" stroke="var(--sheet)" stroke-width="2"/>
+        <text x="254" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Gymshark</text>
+        <text x="254" y="178" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="var(--ink-2)">creadores · venta directa digital</text>
+      </g>
+    </svg>
+    <figcaption><b>Figura 3.</b> Mapa de posicionamiento según precio y motor de crecimiento. Las tres marcas evitan la competencia frontal: ocupan cuadrantes distintos del mismo mercado. Elaboración propia a partir de Retail TouchPoints (2025) y Business Model Analyst (2026).</figcaption>
+  </figure>
+
+  <div class="tbl-wrap">
+    <table>
+      <caption>Tabla 1 · Cuatro dimensiones comparadas</caption>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" class="th-alo">Alo Yoga<span>Los Ángeles, 2007</span></th>
+          <th scope="col" class="th-lulu">lululemon<span>Vancouver, 1998</span></th>
+          <th scope="col" class="th-gym">Gymshark<span>Birmingham, 2012</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Estrategia clave</th>
+          <td>Siembra masiva de creadores (unas 32.700 publicaciones patrocinadas en doce meses) reutilizada como contenido propio; escasez y colaboraciones limitadas.</td>
+          <td>Comunidad institucionalizada: programa de embajadores, clases en tienda y eventos; plan «Power of Three ×2» para duplicar ingresos.</td>
+          <td>Marketing de creadores antes de que existiera el término: producto gratis a youtubers de nicho y venta directa sin intermediarios.</td>
+        </tr>
+        <tr>
+          <th scope="row">Inspiración</th>
+          <td>Mindfulness, yoga y la cultura de bienestar de Los Ángeles, cruzada con los códigos visuales de la moda de lujo.</td>
+          <td>El yoga entendido como disciplina técnica; el rendimiento humano y la vida activa de Vancouver.</td>
+          <td>La cultura del gimnasio y del levantamiento de pesas, narrada desde YouTube por sus propios practicantes.</td>
+        </tr>
+        <tr>
+          <th scope="row">Características</th>
+          <td>Estética <em>studio to street</em>; tiendas-santuario con estudio de yoga y café; plataforma Alo Moves con más de un millón de suscriptores; capital 100 % de los fundadores.</td>
+          <td>Tejidos propietarios y ajuste técnico; margen bruto cercano al 60 %; empresa cotizada; crecimiento internacional de doble dígito.</td>
+          <td>Precio accesible; cadencia digital acelerada; comunidad joven; expansión omnicanal reciente (Londres, Nueva York, Dubái, Ámsterdam).</td>
+        </tr>
+        <tr>
+          <th scope="row">Beneficios</th>
+          <td>Valoración cercana a 10.000 millones de dólares y deseabilidad de marca sin publicidad tradicional; 12 % de preferencia declarada en la categoría.</td>
+          <td>Liderazgo de preferencia (≈ 50 %) y 11.100 millones de dólares de ingresos; rentabilidad sostenida y lealtad medible.</td>
+          <td>Costo de adquisición mínimo y margen defendible: 607,3 millones de libras y un EBITDA ajustado de 51,7 millones en FY2024.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="folio"><span>II · Análisis comparativo</span><span class="num">2</span></div>
+</article>
+
+<!-- ============ PÁGINA 3 ============ -->
+<article class="page">
+  <div class="runner"><span>Del estudio a la calle</span><span>Página 3 de 3</span></div>
+
+  <div class="sec-head">
+    <span class="sec-no">III</span>
+    <h2 class="sec">Qué explica el éxito</h2>
+  </div>
+
+  <p>Del contraste anterior se desprenden cuatro decisiones que las tres marcas tomaron —cada una a su manera— y que constituyen el verdadero denominador común del caso.</p>
+
+  <div class="lessons">
+    <div class="lesson">
+      <span class="lesson-n">01</span>
+      <div>
+        <h3>El nicho como palanca, no como límite</h3>
+        <p>Ninguna nació apuntando a las masas. Alo se dirigió a la practicante de yoga de Los Ángeles, lululemon a la clase de yoga de Vancouver, Gymshark a un puñado de aficionados al gimnasio en YouTube. El nicho les dio algo que la publicidad masiva no compra: credibilidad de origen. La escala llegó después, y llegó porque el nicho la legitimó.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="lesson-n">02</span>
+      <div>
+        <h3>El contenido ajeno convertido en canal propio</h3>
+        <p>Las tres entendieron que la prueba social de un tercero vale más que un anuncio. La diferencia está en la ejecución: Gymshark lo hizo por necesidad y con microcreadores; Alo lo industrializó, sembrando producto a escala y reciclando el mejor material en correo, publicidad pagada, fichas de producto y pantallas de tienda; lululemon lo formalizó en un programa de embajadores con contrato y vínculo local.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="lesson-n">03</span>
+      <div>
+        <h3>La tienda como medio de comunicación</h3>
+        <p>Alo no abre tiendas: abre <em>sanctuaries</em> con estudio de yoga, café y club de bienestar —169 a finales de 2025, incluido un edificio de seis plantas en Seúl y una apertura prevista en los Campos Elíseos—. El espacio físico produce el contenido que alimenta lo digital, invirtiendo la lógica habitual del comercio electrónico. lululemon había hecho lo mismo veinte años antes con clases gratuitas en tienda.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="lesson-n">04</span>
+      <div>
+        <h3>Coherencia entre el discurso y la operación</h3>
+        <p>El propósito solo funciona cuando tiene consecuencias operativas. Alo respalda su relato de bienestar con Alo Gives, que lleva yoga y mindfulness gratuitos a escuelas y familias; lululemon financia eventos deportivos globales; Gymshark sostiene una comunidad de atletas que participan del diseño. Cuando el discurso no se traduce en presupuesto, el consumidor lo detecta.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3 style="font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:10px">Conclusión</h3>
+    <p>Las tres marcas demuestran que en un mercado maduro no existe una única fórmula de éxito, sino una exigencia común: elegir un terreno y ser radicalmente consistente en él. Alo Yoga ganó vendiendo pertenencia a una estética aspiracional; lululemon, vendiendo pertenencia a una comunidad real; Gymshark, vendiendo pertenencia a una subcultura que ya existía y a la que ninguna marca grande escuchaba. El riesgo que enfrentan es también el mismo y es simétrico: Alo puede diluir su deseabilidad si crece demasiado rápido; lululemon puede perder su núcleo frente a retadores más nítidos; Gymshark puede erosionar su margen al entrar al comercio físico. La lección final para cualquier empresa es que la estrategia no consiste en imitar al líder, sino en identificar qué está dispuesto a no hacer.</p>
+  </div>
+
+  <div class="block">
+    <h3 style="font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:4px">Video relacionado</h3>
+    <div class="video">
+      <svg viewBox="0 0 120 76" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ícono de reproducción de video">
+        <rect x="1" y="1" width="118" height="74" rx="8" fill="var(--accent-soft)" stroke="var(--rule)" stroke-width="1"/>
+        <circle cx="60" cy="38" r="19" fill="var(--accent)"/>
+        <path d="M55 29 L71 38 L55 47 Z" fill="var(--sheet)"/>
+      </svg>
+      <div>
+        <p class="video-t">«How Alo Yoga Became a Billion-Dollar Brand Without Traditional Advertising»</p>
+        <p class="small" style="margin-bottom:6px">Recorrido en video por el modelo de crecimiento de Alo: siembra de creadores, tiendas-santuario y bienestar como producto. Complementa la sección II de este ensayo.</p>
+        <a href="https://www.youtube.com/watch?v=2-CW3pjHapo" target="_blank" rel="noopener">youtube.com/watch?v=2-CW3pjHapo</a>
+      </div>
+    </div>
+    <p class="small" style="margin-top:10px">Material complementario: <a href="https://www.youtube.com/watch?v=SztOeaRPIi4" target="_blank" rel="noopener">«How Alo Yoga Became a Household Name»</a>, entrevista con Angelic Vendette, directora de marketing de la marca.</p>
+  </div>
+
+  <div class="block">
+    <h3 style="font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:0">Referencias</h3>
+    <ol class="refs">
+      <li>Business Model Analyst. (2026). <em>Alo Yoga marketing strategy: How a private athleisure brand out-marketed its way to a $10 billion valuation</em>. <a href="https://businessmodelanalyst.com/alo-yoga-marketing-strategy/" target="_blank" rel="noopener">businessmodelanalyst.com/alo-yoga-marketing-strategy</a></li>
+      <li>Chain Store Guide. (2025, abril). <em>Vs. Goliath: Alo Yoga challenges Lululemon in a shifting athleisure landscape</em>. <a href="https://www.chainstoreguide.com/offthechain/2025/04/vs-goliath-alo-yoga-challenges-lululemon-shifting-athleisure-landscape/" target="_blank" rel="noopener">chainstoreguide.com</a></li>
+      <li>Collabstr. (2024). <em>How Gymshark built a billion dollar empire through influencer marketing</em>. <a href="https://collabstr.com/blog/how-gymshark-built-a-billion-dollar-empire-through-influencer-marketing" target="_blank" rel="noopener">collabstr.com</a></li>
+      <li>Ludmir, C. (2023, 29 de junio). <em>Alo Yoga plans 50+ new store openings, with first locations in Paris and London by 2024</em>. Forbes. <a href="https://www.forbes.com/sites/claraludmir/2023/06/29/alo-yoga-plans-50-new-store-openings-with-first-locations-in-paris-and-london-by-2024/" target="_blank" rel="noopener">forbes.com</a></li>
+      <li>lululemon athletica inc. (2025, 27 de marzo). <em>Fourth quarter and full year fiscal 2024 results</em>. Business Wire. <a href="https://www.businesswire.com/news/home/20250327623807/en/lululemon-athletica-inc.-Announces-Fourth-Quarter-and-Full-Year-Fiscal-2024-Results" target="_blank" rel="noopener">businesswire.com</a></li>
+      <li>lululemon athletica inc. (2026, 17 de marzo). <em>Q4 fiscal 2025 earnings commentary</em>. <a href="https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/results-center/financial-supplement-q4-2025.pdf" target="_blank" rel="noopener">corporate.lululemon.com</a></li>
+      <li>Latterly. (2025). <em>Lululemon marketing strategy: Community ambassadors, experiential retail, and sweatlife events</em>. <a href="https://www.latterly.org/lululemon-marketing-strategy/" target="_blank" rel="noopener">latterly.org</a></li>
+      <li>McEvoy, J. (2025, 1 de abril). <em>Founders of Alo Yoga, a hit with celebs like Taylor Swift and Hailey Bieber, are billionaires</em>. Forbes. <a href="https://www.forbes.com/sites/jemimamcevoy/2025/04/01/the-founders-of-this-lululemon-rival-are-worth-nearly-5-billion-each/" target="_blank" rel="noopener">forbes.com</a></li>
+      <li>Retail TouchPoints. (2025). <em>Athleisure faceoff: How Lululemon, Vuori, Alo and Fabletics are making their case to consumers</em>. <a href="https://www.retailtouchpoints.com/topics/market-news/athleisure-faceoff-how-lululemon-vuori-alo-and-fabletics-are-making-their-case-to-consumers" target="_blank" rel="noopener">retailtouchpoints.com</a></li>
+      <li>SUCCESS. (2025). <em>How Alo founders built a billion-dollar brand</em>. <a href="https://www.success.com/how-alo-founders-built-a-billion-dollar-brand" target="_blank" rel="noopener">success.com</a></li>
+      <li>TheIndustry.fashion. (2025). <em>Gymshark achieves record revenue, surpassing £600m for first time</em>. <a href="https://www.theindustry.fashion/gymshark-achieves-record-revenue-surpassing-600m-for-first-time/" target="_blank" rel="noopener">theindustry.fashion</a></li>
+      <li>Wikipedia. (2026). <em>Alo Yoga</em>. <a href="https://en.wikipedia.org/wiki/Alo_Yoga" target="_blank" rel="noopener">en.wikipedia.org/wiki/Alo_Yoga</a></li>
+    </ol>
+    <p class="small" style="margin-top:14px">Nota metodológica: Alo Yoga y Gymshark son empresas privadas; sus cifras de ingresos provienen de reportes de prensa especializada y estimaciones de mercado, no de estados financieros auditados. Todas las fuentes fueron consultadas en septiembre de 2026.</p>
+  </div>
+
+  <div class="folio"><span>III · Qué explica el éxito</span><span class="num">3</span></div>
+</article>
+
+</div>
