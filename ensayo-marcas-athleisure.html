@@ -144,38 +144,63 @@
   .small{font-size:13px;color:var(--muted);max-width:72ch}
   .num{font-variant-numeric:tabular-nums}
 
-  /* ---------- cover ---------- */
-  .cover{padding-top:44px}
-  .cover-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
-  .cover-art{margin:30px 0 0}
-  .cover-art svg{display:block;width:100%;height:auto;max-width:100%}
-  .cover-meta{
-    margin-top:30px;
+  /* ---------- cover (formato institucional) ---------- */
+  .cover{
+    background:#FFFFFF;
+    color:#0E0E0E;
+    padding:0 64px 64px;
+    font-family:"Times New Roman", Times, Georgia, serif;
+    text-align:center;
+    border-color:#DDDDD8;
+  }
+  .cover-banner{
+    display:block;
+    width:calc(100% + 128px);
+    margin:0 -64px 34px;
+    height:auto;
+  }
+  .cover-inst{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:2px 26px;
-    border-top:1px solid var(--rule);
-    padding-top:18px;
+    grid-template-columns:96px minmax(0,1fr) 116px;
+    align-items:center;
+    gap:16px;
+    margin-bottom:44px;
   }
-  .meta-item{padding:8px 0}
-  .meta-k{
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
-    text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;
+  .cover-logo{width:100%;height:auto;display:block}
+  .cover-inst-txt p{
+    margin:0 auto 6px;
+    font-size:17px;
+    line-height:1.32;
+    max-width:30em;
+    color:#0E0E0E;
   }
-  .meta-v{font-size:14px;color:var(--ink)}
-  .abstract{
-    margin-top:26px;
-    border-top:1px solid var(--rule);
-    padding-top:20px;
-    display:grid;
-    grid-template-columns:minmax(0,1fr);
-    gap:14px;
+  .cover-inst-txt p:last-child{margin-bottom:0}
+  .cover-fields{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    max-width:34em;
+    margin:0 auto;
   }
-  .kw{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px;padding:0;list-style:none}
-  .kw li{
-    font-family:var(--mono);font-size:11px;letter-spacing:.04em;
-    border:1px solid var(--rule);border-radius:999px;
-    padding:4px 11px;color:var(--ink-2);background:var(--sheet-2);
+  .cover-fields .fk{
+    margin:26px 0 6px;
+    font-size:17px;
+    letter-spacing:.01em;
+    color:#0E0E0E;
+  }
+  .cover-fields .fv{
+    margin:0;
+    font-size:17px;
+    line-height:1.4;
+    color:#0E0E0E;
+  }
+  .cover-fields p{max-width:none}
+  @media (max-width:640px){
+    .cover{padding:0 22px 40px}
+    .cover-banner{width:calc(100% + 44px);margin:0 -22px 26px}
+    .cover-inst{grid-template-columns:64px minmax(0,1fr) 76px;gap:10px;margin-bottom:32px}
+    .cover-inst-txt p{font-size:14.5px}
+    .cover-fields .fk,.cover-fields .fv{font-size:15px}
   }
 
   /* ---------- running header / footer ---------- */
@@ -284,59 +309,42 @@
 
 <!-- ============ PORTADA ============ -->
 <article class="page cover">
-  <div class="cover-head">
-    <p class="eyebrow">Ensayo académico · Análisis comparativo de marcas</p>
-    <p class="eyebrow" style="color:var(--muted)">Laboratorio 6 · 2026</p>
-  </div>
+  <img class="cover-banner" src="assets/portada-banner.png" alt="Banda decorativa institucional">
 
-  <h1 class="cover-title">Del estudio<br>a la <em>calle</em></h1>
-  <p class="cover-sub">Cómo <strong>Alo Yoga</strong>, <strong>lululemon</strong> y <strong>Gymshark</strong> construyeron tres imperios distintos dentro del mismo mercado: el athleisure.</p>
+  <header class="cover-inst">
+    <img class="cover-logo" src="assets/portada-escudo-up.jpg" alt="Escudo de la Universidad de Panamá">
+    <div class="cover-inst-txt">
+      <p>UNIVERSIDAD DE PANAMÁ</p>
+      <p>FACULTAD DE INFORMÁTICA, ELECTRÓNICA Y COMUNICACIÓN</p>
+      <p>LIC. GERENCIA DE COMERCIO ELECTRÓNICO</p>
+    </div>
+    <img class="cover-logo" src="assets/portada-logo-fiec.jpg" alt="Logo de la Facultad de Informática, Electrónica y Comunicación">
+  </header>
 
-  <div class="cover-art" role="img" aria-label="Ilustración abstracta de tres franjas —aire, tierra y océano— que dan nombre a la marca Alo, atravesadas por tres trayectorias de marca.">
-    <svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <clipPath id="cv"><rect x="0" y="0" width="800" height="250" rx="2"/></clipPath>
-      </defs>
-      <g clip-path="url(#cv)">
-        <rect x="0" y="0" width="800" height="250" fill="var(--sheet-2)"/>
-        <!-- AIRE: arcos concéntricos -->
-        <g fill="none" stroke="var(--rule)" stroke-width="1">
-          <circle cx="640" cy="96" r="42"/><circle cx="640" cy="96" r="66"/>
-          <circle cx="640" cy="96" r="90"/><circle cx="640" cy="96" r="114"/>
-        </g>
-        <circle cx="640" cy="96" r="22" fill="var(--accent-soft)"/>
-        <!-- TIERRA: horizonte -->
-        <line x1="0" y1="163" x2="800" y2="163" stroke="var(--rule)" stroke-width="1"/>
-        <!-- OCÉANO: ondas -->
-        <g fill="none" stroke="var(--rule)" stroke-width="1" opacity=".85">
-          <path d="M0 190 C 66 174, 134 206, 200 190 S 334 174, 400 190 S 534 206, 600 190 S 734 174, 800 190"/>
-          <path d="M0 214 C 66 198, 134 230, 200 214 S 334 198, 400 214 S 534 230, 600 214 S 734 198, 800 214"/>
-          <path d="M0 238 C 66 222, 134 254, 200 238 S 334 222, 400 238 S 534 254, 600 238 S 734 222, 800 238"/>
-        </g>
-        <!-- Tres trayectorias de marca -->
-        <path d="M40 150 C 200 150, 300 60, 760 34" fill="none" stroke="var(--c-lulu)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M40 158 C 240 158, 320 96, 760 74" fill="none" stroke="var(--c-alo)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M40 166 C 280 166, 360 132, 760 116" fill="none" stroke="var(--c-gym)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="760" cy="34" r="4.5" fill="var(--c-lulu)" stroke="var(--sheet-2)" stroke-width="2"/>
-        <circle cx="760" cy="74" r="4.5" fill="var(--c-alo)" stroke="var(--sheet-2)" stroke-width="2"/>
-        <circle cx="760" cy="116" r="4.5" fill="var(--c-gym)" stroke="var(--sheet-2)" stroke-width="2"/>
-        <!-- Etiquetas AIR / LAND / OCEAN -->
-        <g font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="2.6" fill="var(--muted)">
-          <text x="34" y="40">A I R E</text>
-          <text x="34" y="196">T I E R R A</text>
-          <text x="34" y="236">O C É A N O</text>
-        </g>
-        <text x="34" y="112" font-family="Bodoni Moda, serif" font-size="58" fill="var(--ink)" opacity=".9">A L O</text>
-      </g>
-    </svg>
-  </div>
+  <div class="cover-fields">
+    <p class="fk">NOMBRE:</p>
+    <p class="fv">Arnold Campbell</p>
 
-  <div class="cover-meta">
-    <div class="meta-item"><span class="meta-k">Autor(a)</span><span class="meta-v">______________________</span></div>
-    <div class="meta-item"><span class="meta-k">Asignatura</span><span class="meta-v">______________________</span></div>
-    <div class="meta-item"><span class="meta-k">Docente</span><span class="meta-v">______________________</span></div>
-    <div class="meta-item"><span class="meta-k">Fecha</span><span class="meta-v num">14 de septiembre de 2026</span></div>
+    <p class="fk">CÉDULA:</p>
+    <p class="fv">8-984-1572</p>
+
+    <p class="fk">MATERIA:</p>
+    <p class="fv">EMPRENDEDURISMO</p>
+
+    <p class="fk">PROFESOR:</p>
+    <p class="fv">OSIRIS DANIELS</p>
+
+    <p class="fk">TEMA:</p>
+    <p class="fv">Del estudio a la calle: análisis comparativo de las estrategias de marca de Alo&nbsp;Yoga, lululemon y Gymshark</p>
+
+    <p class="fk">FECHA:</p>
+    <p class="fv">14 de septiembre de 2026</p>
   </div>
+</article>
+
+<!-- ============ PÁGINA 1 ============ -->
+<article class="page">
+  <div class="runner"><span>Del estudio a la calle</span><span>Página 1 de 3</span></div>
 
   <div class="abstract">
     <div>
@@ -354,13 +362,8 @@
       </ul>
     </div>
   </div>
-</article>
 
-<!-- ============ PÁGINA 1 ============ -->
-<article class="page">
-  <div class="runner"><span>Del estudio a la calle</span><span>Página 1 de 3</span></div>
-
-  <div class="sec-head">
+  <div class="sec-head" style="margin-top:28px">
     <span class="sec-no">I</span>
     <h2 class="sec">Tres orígenes, un mismo mercado</h2>
   </div>
