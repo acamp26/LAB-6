@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reglas del prestamista</title>
+<link rel="stylesheet" href="fonts-inline.css">
+<style>
+  :root{
+    --rojo:#E0123C;
+    --negro:#0E0E0E;
+    --crema:#FCF5F0;
+    --rosa:#FBE3E7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    width:1050px;
+    background:var(--negro);
+    font-family:'Poppins',Arial,sans-serif;
+    padding:46px 40px 54px;
+  }
+  .card{
+    background:var(--crema);
+    padding:0 0 34px;
+  }
+  .topbar{height:11px;background:var(--rojo);}
+  header{padding:58px 70px 0;text-align:center;}
+  h1{
+    font-family:'Yellowtail',cursive;
+    font-size:92px;
+    font-weight:400;
+    color:var(--negro);
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  h1 em{font-style:normal;color:var(--rojo);}
+  .rule{
+    width:250px;height:3px;background:var(--rojo);
+    margin:14px auto 22px;
+  }
+  .sub{
+    font-size:23px;font-weight:700;letter-spacing:.42em;
+    color:var(--negro);text-transform:uppercase;
+  }
+  .rules{padding:44px 60px 0;display:flex;flex-direction:column;gap:26px;}
+  .row{display:flex;gap:20px;align-items:stretch;}
+  .icon{
+    flex:0 0 124px;background:var(--negro);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .icon svg{width:50px;height:50px;}
+  .icon .pct{font-size:44px;font-weight:700;color:var(--rojo);line-height:1;}
+  .text{
+    flex:1;background:var(--rosa);
+    padding:26px 34px;
+    font-size:25px;line-height:1.62;color:#1A1A1A;
+  }
+  .text b{font-weight:700;color:#0E0E0E;}
+  .text .rojo{color:var(--rojo);font-weight:700;}
+  footer{margin:40px 60px 0;border-top:4px solid var(--negro);padding-top:20px;
+    display:flex;justify-content:space-between;align-items:center;}
+  footer .izq{font-size:23px;font-weight:700;letter-spacing:.09em;color:var(--negro);}
+  footer .der{font-size:23px;font-weight:700;letter-spacing:.09em;color:var(--rojo);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="topbar"></div>
+
+  <header>
+    <h1>Reglas del <em>prestamista</em></h1>
+    <div class="rule"></div>
+    <div class="sub">Pautas</div>
+  </header>
+
+  <section class="rules">
+
+    <div class="row">
+      <div class="icon"><span class="pct">%</span></div>
+      <div class="text">Los préstamos son al <b>15%</b> quincenal.</div>
+    </div>
+
+    <div class="row">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E0123C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+        </svg>
+      </div>
+      <div class="text">Se cobran los <b>15 y 30</b> de cada mes. Los días <b>15, 16, 30 y 1</b> son para pagar intereses y abonar capital; después, al siguiente día se le cobra recargo.</div>
+    </div>
+
+    <div class="row">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E0123C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v12"/>
+          <path d="M15 9.2c-.4-1-1.5-1.7-3-1.7-1.7 0-3 .9-3 2.2 0 1.4 1.2 1.9 3 2.3 1.8.4 3 .9 3 2.3 0 1.3-1.3 2.2-3 2.2-1.6 0-2.7-.7-3-1.8"/>
+        </svg>
+      </div>
+      <div class="text">El recargo es de <b>$5</b> por pasarse <b>4 días</b> de los días de pago.</div>
+    </div>
+
+    <div class="row">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E0123C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="13" r="8"/>
+          <path d="M12 9v4l2.5 2"/>
+          <path d="M5 3 2.5 5.5"/>
+          <path d="m19 3 2.5 2.5"/>
+        </svg>
+      </div>
+      <div class="text">Después del <b>cuarto día</b> se debe pagar el <b>recargo y los intereses</b> para poder abonar a capital. <span class="rojo">Los intereses se renuevan a los 7 días de adquirir el préstamo</span>, al igual que el siguiente recargo después de los <b>4 días</b> estipulados.</div>
+    </div>
+
+    <div class="row">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E0123C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 7 5 5-5 5"/>
+          <path d="m10 7 5 5-5 5"/>
+          <path d="m17 7 5 5-5 5"/>
+        </svg>
+      </div>
+      <div class="text">Si está de acuerdo en adquirir su préstamo conmigo, debe mandar <b>foto de su cédula</b> y su <b>número de Yappy</b> donde se le enviará el dinero.</div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="izq">DÍAS DE PAGO · 15 Y 30</div>
+    <div class="der">PAGOS POR YAPPY</div>
+  </footer>
+</div>
+</body>
+</html>
