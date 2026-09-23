@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Anaís Birthday 10</title>
+<style>
+@font-face{font-family:'Lobster';src:url(fuentes/Lobster-Regular.ttf)}
+@font-face{font-family:'Bungee';src:url(fuentes/Bungee-Regular.ttf)}
+@font-face{font-family:'Poppins';font-weight:800;src:url(fuentes/Poppins-ExtraBold.ttf)}
+@font-face{font-family:'Poppins';font-weight:600;src:url(fuentes/Poppins-SemiBold.ttf)}
+:root{--rosa:#ff4fb8;--fucsia:#ff2d95;--chicle:#ff9ad5;--lila:#c77dff;--morado:#9d4edd;--dorado:#ffd86b;--menta:#7ef2e0}
+html,body{margin:0;background:#12051a}
+.card{position:relative;width:1080px;height:1440px;overflow:hidden;font-family:'Poppins',sans-serif;color:#fff;
+  background:url(chiva-fondo.jpg) center 42%/cover no-repeat}
+/* tinte rosado/lila sobre la foto */
+.card::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(255,45,149,.55),rgba(157,78,221,.55));mix-blend-mode:color}
+.card::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(40,6,50,.9) 0%,rgba(40,6,50,.55) 17%,rgba(40,6,50,0) 30%,rgba(40,6,50,0) 62%,rgba(40,6,50,.75) 76%,rgba(30,4,40,.95) 100%)}
+.layer{position:absolute;inset:0;z-index:2}
+.top{position:absolute;top:22px;left:0;right:0;text-align:center}
+.crown{font-size:70px;line-height:1;filter:drop-shadow(0 0 12px var(--dorado)) drop-shadow(0 0 24px var(--rosa));margin-bottom:-26px;transform:rotate(-8deg) translateX(-150px)}
+.name{font-family:'Lobster';font-size:170px;line-height:1;color:#fff0fa;
+  text-shadow:0 0 6px #fff,0 0 18px var(--chicle),0 0 36px var(--rosa),0 0 70px var(--fucsia),0 0 110px var(--morado)}
+.row{display:flex;justify-content:center;align-items:center;gap:26px;margin-top:4px}
+.bday{font-family:'Bungee';font-size:66px;letter-spacing:6px;color:#fff;
+  text-shadow:0 0 6px #fff,0 0 16px var(--lila),0 0 34px var(--morado),0 0 60px var(--lila)}
+.ten{width:124px;height:124px;border-radius:50%;display:grid;place-items:center;
+  font-family:'Bungee';font-size:66px;color:#fff;border:6px solid var(--chicle);
+  background:rgba(60,5,50,.6);
+  box-shadow:0 0 12px var(--rosa),0 0 30px var(--fucsia),inset 0 0 18px var(--rosa);
+  text-shadow:0 0 8px var(--chicle),0 0 22px var(--fucsia)}
+.tag{position:absolute;top:385px;left:40px;font-family:'Bungee';font-size:30px;letter-spacing:3px;color:#fff;
+  transform:rotate(-6deg);padding:10px 20px;border:3px solid var(--lila);border-radius:14px;background:rgba(50,5,60,.6);
+  box-shadow:0 0 14px var(--lila),inset 0 0 10px var(--lila);text-shadow:0 0 10px var(--rosa)}
+.deco{position:absolute;line-height:1}
+.glow{filter:drop-shadow(0 0 10px var(--rosa))}
+.bf{filter:hue-rotate(290deg) saturate(1.4) drop-shadow(0 0 10px var(--rosa))}
+.star{position:absolute;color:#fff;text-shadow:0 0 8px #fff,0 0 18px var(--chicle),0 0 30px var(--rosa)}
+.info{position:absolute;left:60px;right:60px;bottom:128px;padding:26px 40px;border-radius:32px;
+  background:rgba(45,6,55,.74);border:4px solid var(--rosa);
+  box-shadow:0 0 16px var(--rosa),0 0 44px rgba(255,79,184,.55),inset 0 0 22px rgba(255,79,184,.35)}
+.info p{margin:0;display:flex;align-items:baseline;gap:18px;font-size:38px;font-weight:800;line-height:1.55}
+.info .ic{width:46px;text-align:center;font-size:34px}
+.info .hl{color:var(--chicle);text-shadow:0 0 10px rgba(255,79,184,.9)}
+.info .note{color:var(--menta);font-size:28px;font-weight:600}
+.info .small{font-size:32px}
+.info .small span.l{font-weight:600}
+.cta{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  font-family:'Bungee';font-size:44px;letter-spacing:4px;color:#fff;padding:14px 44px;border-radius:60px;
+  background:linear-gradient(90deg,var(--fucsia),var(--lila));
+  box-shadow:0 0 18px var(--fucsia),0 0 50px var(--lila);text-shadow:0 0 8px rgba(255,255,255,.7)}
+</style></head>
+<body><div class="card"><div class="layer">
+  <div class="top">
+    <div class="crown">👑</div>
+    <div class="name">Anaís</div>
+    <div class="row"><div class="bday">BIRTHDAY</div><div class="ten">10</div></div>
+  </div>
+  <div class="tag">¡Chiva parrandera! 💖</div>
+
+  <!-- destellos -->
+  <div class="star" style="top:60px;left:90px;font-size:44px">✦</div>
+  <div class="star" style="top:150px;left:200px;font-size:24px">✦</div>
+  <div class="star" style="top:70px;right:110px;font-size:36px">✦</div>
+  <div class="star" style="top:190px;right:60px;font-size:22px">✦</div>
+  <div class="star" style="top:330px;right:210px;font-size:28px">✦</div>
+  <div class="star" style="top:560px;left:30px;font-size:26px">✦</div>
+  <div class="star" style="top:640px;right:40px;font-size:34px">✦</div>
+  <div class="star" style="top:880px;left:70px;font-size:22px">✦</div>
+  <!-- mariposas y corazones -->
+  <div class="deco bf" style="top:110px;left:40px;font-size:62px;transform:rotate(-18deg)">🦋</div>
+  <div class="deco bf" style="top:120px;right:40px;font-size:54px;transform:rotate(16deg)">🦋</div>
+  <div class="deco glow" style="top:470px;right:30px;font-size:48px;transform:rotate(12deg)">💖</div>
+  <div class="deco glow" style="top:760px;left:24px;font-size:42px;transform:rotate(-12deg)">💗</div>
+  <div class="deco bf" style="top:560px;right:150px;font-size:40px;transform:rotate(-10deg)">🦋</div>
+  <div class="deco glow" style="top:250px;left:70px;font-size:40px">🎀</div>
+
+  <div class="info">
+    <p><span class="ic">🎉</span><span>Sábado <span class="hl">10 de octubre</span></span></p>
+    <p><span class="ic">🕔</span><span><span class="hl">5:00 pm</span> <span class="note">(¡llegar puntual!)</span></span></p>
+    <p><span class="ic">📍</span><span>Saliendo desde mi casa</span></p>
+    <p class="small"><span class="ic">🎁</span><span>Regalo: <span class="l">efectivo o certificado de regalo</span></span></p>
+  </div>
+  <div class="cta">¡No te lo pierdas! 💕</div>
+</div></div></body></html>
