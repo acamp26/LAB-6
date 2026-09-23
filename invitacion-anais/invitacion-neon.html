@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Anaís Birthday 10</title>
+<style>
+@font-face{font-family:'Lobster';src:url(fuentes/Lobster-Regular.ttf)}
+@font-face{font-family:'Bungee';src:url(fuentes/Bungee-Regular.ttf)}
+@font-face{font-family:'Poppins';font-weight:800;src:url(fuentes/Poppins-ExtraBold.ttf)}
+@font-face{font-family:'Poppins';font-weight:600;src:url(fuentes/Poppins-SemiBold.ttf)}
+:root{--naranja:#ff7a1a;--ambar:#ffb300;--amarillo:#ffe45c;--rojo:#ff2d3d;--violeta:#8b5cf6;--azul:#5b7cff}
+html,body{margin:0;background:#0b0710}
+.card{position:relative;width:1080px;height:1440px;overflow:hidden;font-family:'Poppins',sans-serif;color:#fff;
+  background:url(chiva-fondo.jpg) center 42%/cover no-repeat}
+.card::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(8,4,14,.88) 0%,rgba(8,4,14,.55) 17%,rgba(8,4,14,0) 30%,rgba(8,4,14,0) 62%,rgba(8,4,14,.75) 76%,rgba(8,4,14,.95) 100%)}
+.top{position:absolute;top:26px;left:0;right:0;text-align:center}
+.name{font-family:'Lobster';font-size:170px;line-height:1;color:#fff4d6;
+  text-shadow:0 0 6px #fff,0 0 18px var(--ambar),0 0 36px var(--naranja),0 0 70px var(--naranja),0 0 110px var(--rojo)}
+.row{display:flex;justify-content:center;align-items:center;gap:26px;margin-top:4px}
+.bday{font-family:'Bungee';font-size:66px;letter-spacing:6px;color:#fff;
+  text-shadow:0 0 6px #fff,0 0 16px var(--violeta),0 0 34px var(--azul),0 0 60px var(--violeta)}
+.ten{width:124px;height:124px;border-radius:50%;display:grid;place-items:center;
+  font-family:'Bungee';font-size:66px;color:var(--amarillo);border:6px solid var(--ambar);
+  background:rgba(20,8,4,.55);
+  box-shadow:0 0 12px var(--ambar),0 0 30px var(--naranja),inset 0 0 18px var(--naranja);
+  text-shadow:0 0 8px var(--ambar),0 0 22px var(--naranja)}
+.tag{position:absolute;top:385px;left:40px;font-family:'Bungee';font-size:30px;letter-spacing:3px;color:var(--amarillo);
+  transform:rotate(-6deg);padding:10px 20px;border:3px solid var(--naranja);border-radius:14px;background:rgba(10,5,15,.55);
+  box-shadow:0 0 14px var(--naranja),inset 0 0 10px var(--naranja);text-shadow:0 0 10px var(--naranja)}
+.info{position:absolute;left:60px;right:60px;bottom:128px;padding:26px 40px;border-radius:28px;
+  background:rgba(12,6,20,.72);border:4px solid var(--naranja);
+  box-shadow:0 0 16px var(--naranja),0 0 44px rgba(255,122,26,.55),inset 0 0 22px rgba(255,122,26,.35)}
+.info p{margin:0;display:flex;align-items:baseline;gap:18px;font-size:38px;font-weight:800;line-height:1.55}
+.info .ic{width:46px;text-align:center;font-size:34px}
+.info .hl{color:var(--amarillo);text-shadow:0 0 10px rgba(255,179,0,.8)}
+.info .note{color:#ff8a8a;font-size:28px;font-weight:600}
+.info .small{font-size:32px}
+.info .small span.l{font-weight:600}
+.cta{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  font-family:'Bungee';font-size:44px;letter-spacing:4px;color:#fff;padding:14px 44px;border-radius:60px;
+  background:linear-gradient(90deg,var(--rojo),var(--naranja));
+  box-shadow:0 0 18px var(--rojo),0 0 50px var(--naranja);text-shadow:0 0 8px rgba(255,255,255,.7)}
+</style></head>
+<body><div class="card">
+  <div class="top">
+    <div class="name">Anaís</div>
+    <div class="row"><div class="bday">BIRTHDAY</div><div class="ten">10</div></div>
+  </div>
+  <div class="tag">¡Chiva parrandera!</div>
+  <div class="info">
+    <p><span class="ic">🎉</span><span>Sábado <span class="hl">10 de octubre</span></span></p>
+    <p><span class="ic">🕔</span><span><span class="hl">5:00 pm</span> <span class="note">(¡llegar puntual!)</span></span></p>
+    <p><span class="ic">📍</span><span>Saliendo desde mi casa</span></p>
+    <p class="small"><span class="ic">🎁</span><span>Regalo: <span class="l">efectivo o certificado de regalo</span></span></p>
+  </div>
+  <div class="cta">¡No te lo pierdas!</div>
+</div></body></html>
